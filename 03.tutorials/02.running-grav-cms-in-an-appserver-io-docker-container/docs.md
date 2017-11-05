@@ -6,7 +6,7 @@ taxonomy:
         - tutorials
 ---
 
-Running Magento 2 on our appserver.io Docker container provides some advantages because some 
+Running GRAV CMS on our appserver.io Docker container provides some advantages because some 
 of the requirements that usually needs manual tweaks will be already set-up for you, like
 
 * URL rewriting
@@ -20,34 +20,14 @@ So installing Magento 2 in an appserver.io Docker container needs basically five
 Download and install [Docker](https://www.docker.com/community-edition) for your system.
 
 If you already have a running Docker installation, you can skip this step and proceed with 
-[Step 2](#step-2-starting-a-mysql-docker-container).
+[Step 2](#step-2-starting-a-appserver-io-docker-container).
 
-### Step 2: Starting a MySQL Docker container 
-
-> If you already have MySQL running on your system, you have to stop this temporarily,
-> because port `3306` will already be in use and the Docker container can not be started.
-
-Starting a MySQL container with Docker is pretty simple. Open your commandline and
-execute the following command
-
-```sh
-MacBook-Pro:~ docker run -d \
-  --name mysql-5.6 -p127.0.0.1:3306:3306 \
-  -e MYSQL_ROOT_HOST=% \
-  -e MYSQL_ROOT_PASSWORD=appserver.i0 \
-  mysql/mysql-server:5.6
-```
-
-This downloads a MySQL 5.6 Docker image and starts a container with MySQL listen on port
-`127.0.0.1:3306` of your local machine.
-
-### Step 3: Starting a appserver.io Docker container
+### Step 2: Starting a appserver.io Docker container
 
 > If you already have a webserver running that listens either to one of the ports `80` and `443` 
 > you'll also have to stop it temporarly.
 
-Beside the MySQL container, we need a appserver.io container that runs the Magento 2 instance. 
-Again, open your commandline, if you've already closed it, and execute the following command
+We need a appserver.io container that runs the Magento 2 instance. Again, open your commandline, if you've already closed it, and execute the following command
 
 ```sh
 MacBook-Pro:~ docker run -d \
@@ -55,7 +35,6 @@ MacBook-Pro:~ docker run -d \
   -p127.0.0.1:443:443 \
   -v /Users/wagnert/Workspace:/root/Workspace \
   --name appserver-1.1.4-magento \
-  --link mysql-5.6:mysql \
   appserver/dist:1.1.4
 ```
 
