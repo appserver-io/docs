@@ -1,5 +1,6 @@
 ---
 title: 'Running GRAV CMS'
+published: false
 taxonomy:
     category:
         - tutorials
