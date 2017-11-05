@@ -6,14 +6,16 @@ taxonomy:
         - tutorials
 ---
 
-Running GRAV CMS on our appserver.io Docker container provides some advantages because some 
-of the requirements that usually needs manual tweaks will be already set-up for you, like
+Running [GRAV CMS](https://getgrav.org/) on our appserver.io Docker container provides some 
+advantages because some of the requirements that usually needs manual tweaks will be already 
+set-up for you, like
 
 * URL rewriting
 * SSL support
-* CRON configuration as part of the application sources
 
 So installing GRAV CMS in an appserver.io Docker container needs basically five steps.
+
+> BTW: appserver.io website and documentation page run's on GRAV CMS. THANKS GRAV CMS team!!!
 
 ### Step 1: Docker Installation
 
