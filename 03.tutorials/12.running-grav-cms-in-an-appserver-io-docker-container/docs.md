@@ -1,5 +1,5 @@
 ---
-title: 'Running Magento 3'
+title: 'Running GRAV CMS'
 taxonomy:
     category:
         - tutorials
