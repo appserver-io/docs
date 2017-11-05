@@ -1,5 +1,5 @@
 ---
-title: 'Running GRAV CMS'
+title: 'Running GRAV CMS in an appserver.io Docker container'
 published: true
 taxonomy:
     category:
