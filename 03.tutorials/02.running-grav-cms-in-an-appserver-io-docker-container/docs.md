@@ -72,7 +72,7 @@ has successfully been deployed.
 
 > The GRAV CMS deployment process could take up to 1 minute, depending on your hardware!
 
-Finally, user your browser to open the Magento 2 [frontend](http://127.0.0.1/grav-1.3.8/) or 
+Finally, user your browser to open the GRAV CMS [frontend](http://127.0.0.1/grav-1.3.8/) or 
 [backend](http://127.0.0.1/grav-1.3.8/admin/) and create the admin user.
 
 That's it - have fun!
