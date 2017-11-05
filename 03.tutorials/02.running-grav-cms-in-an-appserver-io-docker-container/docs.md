@@ -51,10 +51,10 @@ execute the following lines on the commandline
 
 ```sh
 MacBook-Pro:~ docker exec appserver-1.1.4-grav bash -c \
-  "wget http://apps.appserver.io/grav/grav-1.3.8.phar \
-   -O /opt/appserver/deploy/grav-1.3.8.phar"
+  "wget http://apps.appserver.io/grav/grav-latest.phar \
+   -O /opt/appserver/deploy/grav-latest.phar"
 MacBook-Pro:~ docker exec appserver-1.1.4-grav bash -c \
-  "touch /opt/appserver/deploy/grav-1.3.8.phar.dodeploy"
+  "touch /opt/appserver/deploy/grav-latest.phar.dodeploy"
 ```
 
 Now wait until appserver.io has deployed the GRAV CMS sources. To check if everything is ready, 
@@ -64,15 +64,15 @@ execute the following command several times and check the output
 MacBook-Pro:~ wagnert$ docker exec appserver-1.1.4-grav bash -c "ls -l /opt/appserver/deploy"
 total 195588
 -rw-r--r-- 1 root root      4384 Jun  9 07:21 README.md
--rw-r--r-- 1 root root 200269499 Jun  9  0017 grav-1.3.8.phar
--rw-rw-r-- 1 root root        44 Jun 10 15:23 grav-1.3.8.phar.deployed
+-rw-r--r-- 1 root root 200269499 Jun  9  0017 grav-latest.phar
+-rw-rw-r-- 1 root root        44 Jun 10 15:23 grav-latest.phar.deployed
 ```
-When the file `grav-1.3.8.phar.deploying` changed to `grav-1.3.8.phar.deployed` GRAV CMS 
+When the file `grav-latest.phar.deploying` changed to `grav-latest.phar.deployed` GRAV CMS 
 has successfully been deployed. 
 
 > The GRAV CMS deployment process could take up to 1 minute, depending on your hardware!
 
-Finally, user your browser to open the GRAV CMS [frontend](http://127.0.0.1/grav-1.3.8/) or 
-[backend](http://127.0.0.1/grav-1.3.8/admin/) and create the admin user.
+Finally, user your browser to open the GRAV CMS [frontend](http://127.0.0.1/grav-latest/) or 
+[backend](http://127.0.0.1/grav-latest/admin/) and create the admin user.
 
 That's it - have fun!
