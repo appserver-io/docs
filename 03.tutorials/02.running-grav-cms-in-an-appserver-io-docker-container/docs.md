@@ -13,7 +13,7 @@ set-up for you, like
 * URL rewriting
 * SSL support
 
-So installing GRAV CMS in an appserver.io Docker container needs basically five steps.
+So installing GRAV CMS in an appserver.io Docker container needs basically three steps.
 
 > BTW: appserver.io website and documentation page run's on GRAV CMS. THANKS GRAV CMS team!!!
 
