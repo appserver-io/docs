@@ -158,4 +158,4 @@ The second method of getting appserver running under docker is to build your own
 
 To run the properly containerized version of appserver, there is a `docker-compose.yml` file in the repository mentioned above. `cd` into the `/example` directory and then run `docker-compose up`. Once all the containers are built and running, you will find appserver running under the URLs mentioned above.
 
-If you'd like to learn more about developing applications for appserver in a Docker environment, please visit the Development with Docker[http://docs.appserver.io/tutorials/development-with-docker](http://docs.appserver.io/tutorials/development-with-docker) tutorial.
+If you'd like to learn more about developing applications for appserver in a Docker environment, please visit the [Development with Docker](http://docs.appserver.io/tutorials/development-with-docker) tutorial.
