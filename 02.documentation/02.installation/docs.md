@@ -144,32 +144,18 @@ The information below is also in reference to the [appserver-io-apps/example](ht
 
 ### The All-in-One Container Container
 
-There are two ways to get going with this container. 
-
-The first and easiest way is to simply run the container from the appserver repository on Docker Hub.
+There are two ways to get going with this container. The first and easiest way is to simply run the container from the appserver repository on Docker Hub.
 
 ```
 $ docker run -p 9080:80 appserver/example
 ```
 
-This will pull the `appserver/example` container and run it, routing port 9080 to port 80 on your host machine. If you are running on your local machine, you should be able to access the appserver's index page at
+This will pull the `appserver/example` container and run it, routing port 9080 to port 80 on your host machine. If you are running on your local machine, you should be able to access the appserver's index page at `http://docker.local:9080` or `http://127.0.0.1:9080`, depending on how Docker is installed. The example app can be found under the resource locator `/example`.
 
-`http://docker.local:9080` or `http://127.0.0.1:9080`, depending on how Docker is installed.
-
-The example app can be found under the resource locator `/example`
-
-The second method of getting appserver running under docker is to build your own docker container image and run it. The repository mentioned above has a `dockerfile`, which you can use to build the container image. `cd` into the `/example` directory and run the following command
-
-`docker build -t your-org-name/container-name .`
-
-Once the image is built, you can use the same `docker run` command used above, but with the name you gave the image above, to run the image as a container. 
+The second method of getting appserver running under docker is to build your own docker container image and run it. The repository mentioned above has a `dockerfile`, which you can use to build the container image. `cd` into the `/example` directory and run the following command `docker build -t your-org-name/container-name .`. Once the image is built, you can use the same `docker run` command used above, but with the name you gave the image above, to run the image as a container. 
 
 ### The Containerized Version
 
-To run the properly containerized version of appserver, there is a `docker-compose.yml` file in the repository mentioned above. `cd` into the `/example` directory and then run 
-
-`docker-compose up`    
-
-Once all the containers are built and running, you will find appserver running under the URLs mentioned above.
+To run the properly containerized version of appserver, there is a `docker-compose.yml` file in the repository mentioned above. `cd` into the `/example` directory and then run `docker-compose up`. Once all the containers are built and running, you will find appserver running under the URLs mentioned above.
 
 If you'd like to learn more about developing applications for appserver in a Docker environment, please visit the Development with Docker[http://docs.appserver.io/tutorials/development-with-docker](http://docs.appserver.io/tutorials/development-with-docker) tutorial.
