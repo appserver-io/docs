@@ -73,10 +73,10 @@ execute the following lines on the commandline
 
 ```sh
 MacBook-Pro:~ docker exec appserver-1.1.4-magento bash -c \
-  "wget http://apps.appserver.io/magento2/magento2-ce-2.1.7.phar \
-   -O /opt/appserver/deploy/magento2-ce-2.1.7.phar"
+  "wget http://apps.appserver.io/magento2/magento2-latest.phar \
+   -O /opt/appserver/deploy/magento2-latest.phar"
 MacBook-Pro:~ docker exec appserver-1.1.4-magento bash -c \
-  "touch /opt/appserver/deploy/magento2-ce-2.1.7.phar.dodeploy"
+  "touch /opt/appserver/deploy/magento2-latest.phar.dodeploy"
 ```
 
 Now wait until appserver.io has deployed the Magento 2 sources. To check if everything is ready, 
@@ -86,10 +86,10 @@ execute the following command several times and check the output
 MacBook-Pro:~ wagnert$ docker exec appserver-1.1.4-magento bash -c "ls -l /opt/appserver/deploy"
 total 195588
 -rw-r--r-- 1 root root      4384 Jun  9 07:21 README.md
--rw-r--r-- 1 root root 200269499 Jun  9  0017 magento2-ce-2.1.7.phar
--rw-rw-r-- 1 root root        44 Jun 10 15:23 magento2-ce-2.1.7.phar.deployed
+-rw-r--r-- 1 root root 200269499 Jun  9  0017 magento2-latest.phar
+-rw-rw-r-- 1 root root        44 Jun 10 15:23 magento2-latest.phar.deployed
 ```
-When the file `magento2-ce-2.1.7.phar.deploying` changed to `magento2-ce-2.1.7.phar.deployed` Magento 2 
+When the file `magento2-latest.phar.deploying` changed to `magento2-latest.phar.deployed` Magento 2 
 has successfully been deployed. 
 
 > The Magento 2 deployment process could take up to 1 minute, depending on your hardware!
@@ -102,7 +102,7 @@ the setup in your browser or on the commandline by executing the following lines
 ```sh
 MacBook-Pro:~ docker exec mysql-5.6 bash -c "mysql -uroot -pappserver.i0 --execute='CREATE DATABASE magento2'"
 MacBook-Pro:~ docker exec appserver-1.1.4-magento bash -c \
-  "bin/php webapps/magento2-ce-2.1.7/bin/magento setup:install \
+  "bin/php webapps/magento2-latest/bin/magento setup:install \
    --backend-frontname=admin \
    --db-host=mysql \
    --db-password=appserver.i0 \
@@ -114,8 +114,8 @@ MacBook-Pro:~ docker exec appserver-1.1.4-magento bash -c \
 MacBook-Pro:~ docker exec mysql-5.6 bash -c "supervisorctl restart appserver-watcher'"
 ```
 
-Finally, user your browser to open the Magento 2 [frontend](http://127.0.0.1/magento2-ce-2.1.7/) or 
-[backend](http://127.0.0.1/magento2-ce-2.1.7/admin/) logging in with username `appserver` and 
+Finally, user your browser to open the Magento 2 [frontend](http://127.0.0.1/magento2-latest/) or 
+[backend](http://127.0.0.1/magento2-latest/admin/) logging in with username `appserver` and 
 password `appserver.i0`.
 
 That's it - have fun!
