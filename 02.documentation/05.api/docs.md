@@ -3,11 +3,12 @@ title: API
 taxonomy:
     category:
         - docs
+visible: true
 ---
 
 appserver.io up from version 1.1.1 comes with a RESTFul JSON API that can be browsed with the bundled Swagger UI via the URL `http://127.0.0.1:9024/swagger-ui/`. 
 
-The API itself has been implemented as a Web Application using the Servlet Engine and follows the [json:api](http://jsonapi.org/) specifiction.
+The API itself has been implemented as a Web Application using the Servlet Engine and follows the [json:api](http://jsonapi.org/) specification.
 
 ## Availability
 
