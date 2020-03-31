@@ -1,2 +1,2 @@
-# pages
-Official repository for the appserver.io documentation: https://github.com/appserver-io/docs
+# docs.appserver.io
+Repository of the appserver.io documentation: https://docs.appserver.io
