@@ -1,0 +1,249 @@
+/*
+===============================================================================================================================
+Put your custom CSS in this file.
+===============================================================================================================================
+*/
+
+/* CSS to hide sidebar numbering (uncomment to enable) */
+/*
+#sidebar ul.topics > li > a b
+{
+    visibility: hidden;
+}
+*/
+
+/* CSS to hide clipboard icon (uncomment to enable) */
+/*
+.copy-to-clipboard {
+    display:none;
+}
+*/
+#header {
+	background: #31b0d5;
+}
+.searchbox {
+    border: 0;
+    background: #68B9D5;
+}
+.searchbox input::active {
+	outline: 0;
+	border: 0;
+}
+.button {
+    background: #31b0d5;
+    transition: background 300ms ease;
+    box-shadow: 0 3px 0 #3BA3D5;
+}
+.button:hover {
+	background: #3BA3D5;
+	box-shadow: 0 3px 0 #31b0d5;
+}
+#sidebar ul li.visited>a .read-icon {
+	color: #3BA3D5;
+}
+a {
+    color: #31b0d5;
+    transition: color 300ms ease;
+}
+a:hover {
+	color: #4A97D5;
+}
+.cc-banner .cc-btn:last-child {
+    transition: background 300ms ease;
+}
+code {
+    font-size: 90%;
+    color: #222 !important;
+    background-color: #f4f4f4 !important;
+    border-radius: 4px;
+}
+.copy-to-clipboard {
+	display: none !important;
+	background: none !important;
+}
+.searchbox {
+    margin-bottom: .75rem;
+}
+
+/* JS COMMENTS */
+#jscomments_open {
+    width: 30%;
+    margin: 0 auto;
+    background-color: #1BB3E9;
+    height: 40px;
+    text-align:center;
+    color: #fff;
+    padding: 6px 0;
+    cursor:pointer;
+    -webkit-transition : All 0.3s ease;
+    -moz-transition    : All 0.3s ease;
+    -o-transition      : All 0.3s ease;
+    transition         : All 0.3s ease;
+}
+#jscomments_open:hover,
+#jscomments_open:active,
+#jscomments_open:focus {
+    background-color: #0e6e90;
+}
+#jscomments_notice {
+    text-align: center;
+}
+#jscomments_copyright {
+    text-align:center; 
+    width:100%;
+    margin-top: 20px;
+}
+
+/* PRIVACY POPUP */
+.show-cookie-notice .cookie-notice,
+.backend-show-cookie-notice .cookie-notice {
+    display: block;
+}
+.cookie-notice {
+    -webkit-transform: translateY(50%);
+    background: rgba(45,44,55,0.9);
+    color: #fff;
+    display: none;
+    left: 0;
+    margin: 0 auto;
+    max-width: 1092px;
+    overflow: hidden;
+    padding: 60px;
+    position: fixed;
+    right: 0;
+    bottom: 50%;
+    transform: translateY(50%);
+    transition: background 1s ease-in, bottom 1.5s ease-out;
+    z-index: 10000;
+}
+.cookie-notice--content {
+    min-height: 26px;
+    overflow: hidden;
+}
+.cookie-notice-message {
+    font-size: 16px;
+    margin-bottom: 0;
+    display: inline-block;
+    width: 75%;
+}
+.cookie-notice--allowlink {
+    top: 60px;
+}
+.cookie-notice--allowlink, .cookie-notice--denylink {
+    font-size: 20px;
+    position: absolute;
+    right: 60px;
+    white-space: nowrap;
+    width: 20%;
+}
+.cookie-notice-message a {
+    color: #fff;
+    text-decoration: underline;
+}
+.td-btn {
+    margin-right: 4px;
+    padding: 12px;
+    background-color: #1BB3E9;
+    color: #FFFFFF!important;
+    display: block;
+    text-align: center;
+    border-radius: 2px;
+    -webkit-transition: All 0.3s ease;
+    -moz-transition: All 0.3s ease;
+    -o-transition: All 0.3s ease;
+    transition: All 0.3s ease;
+    user-drag: none; 
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+.td-btn-privacy {
+    width: 150px;
+    display: none;
+    margin-bottom: 25px;
+    cursor: pointer;
+}
+.cookie-notice--denylink .td-btn {
+    background-color: #868686;
+}
+.td-btn:hover {
+    opacity: 0.75;
+}
+
+@media (max-width: 480px) {
+   .cookie-notice--buttons .td-btn {
+        width: 100%;
+    }
+    .cookie-notice--buttons {
+        padding: 0 20px;
+    }
+    .cookie-notice {
+        padding: 20px;
+    }
+    body, html {
+        font-size: 16px;
+    }
+    .cookie-notice-message {
+        font-size: 11px;
+        margin-top: 150px;
+    }
+    .cookie-notice-message h3 {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 768px), (max-height: 480px) {
+    .cookie-notice--allowlink,
+    .cookie-notice--denylink {
+        bottom: auto;
+        position: relative;
+        right: auto;
+        top: auto;
+        padding-bottom: 40px;
+    }
+    .cookie-notice--buttons {
+        float: none;
+        left: 0;
+        margin-top: 20px;
+        padding: 0 40px;
+        position: absolute;
+        top: 0;
+        width: 100%;
+    }
+    .cookie-notice {
+        -webkit-transform: none;
+        bottom: 0;
+        padding-top: 0;
+        top: auto;
+        transform: none;
+    }
+    .cookie-notice-message {
+        margin-top: 150px;
+        width: 100%;
+    }
+    .cookie-notice--buttons .td-btn {
+        display: inline-block;
+        overflow: hidden;
+        width: 100%;
+    }
+}
+
+@media (min-width: 992px) {
+    .cookie-notice--allowlink {
+        top: 40px;
+        width: 30%;
+    }
+    .cookie-notice--denylink {
+        bottom: 40px;
+        width: 30%;
+    }
+    .cookie-notice {
+        overflow: auto;
+        padding: 40px;
+    }
+    .cookie-notice-message {
+        width: 60%;
+    }
+}

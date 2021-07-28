@@ -1,0 +1,29 @@
+en:
+  THEME_LEARN2_GIT_EDIT_THIS_PAGE: Edit this Page
+  THEME_LEARN2_GITHUB_EDIT_THIS_PAGE: edit this page
+  THEME_LEARN2_GITHUB_NOTE: Found errors? Think you can improve this documentation?
+  THEME_LEARN2_CLEAR_HISTORY: Clear History
+  THEME_LEARN2_BUILT_WITH_GRAV: Built with <a href="http://getgrav.org">Grav</a> - The Modern Flat File CMS
+  THEME_LEARN2_SEARCH_DOCUMENTATION: Search Documentation
+  PLUGINS:
+    JS_COMMENTS:
+      PROVIDERS:
+        DISQUS:
+          OPEN: 'Load Comments'
+          COPYRIGHT: '<a href="https://disqus.com" rel="nofollow noopener noreferrer" target="_blank">Blog Comments powered by <span>Discourse</span>.</a>'
+          NOTICE: 'Please note that by clicking "Load Comments", your browser will establish a connection with servers from Disqus.<br>For more information, please visit our <a href="https://appserver.io/privacy" target="_blank" title="Privacy statement">privacy statement</a>.'
+
+de:
+  THEME_LEARN2_GIT_EDIT_THIS_PAGE: Diese Seite bearbeiten
+  THEME_LEARN2_GITHUB_EDIT_THIS_PAGE: diese Seite bearbeiten
+  THEME_LEARN2_GITHUB_NOTE: Fehler gefunden? Möchten Sie diese Seite verbessern?
+  THEME_LEARN2_CLEAR_HISTORY: Verlauf löschen
+  THEME_LEARN2_BUILT_WITH_GRAV: Seite erstellt mit <a href="http://getgrav.org">Grav</a> - The Modern Flat File CMS
+  THEME_LEARN2_SEARCH_DOCUMENTATION: Dokumentation durchsuchen
+  PLUGINS:
+    JS_COMMENTS:
+      PROVIDERS:
+        DISQUS:
+          OPEN: 'Kommentare Laden'
+          COPYRIGHT: '<a href="https://disqus.com" rel="nofollow noopener noreferrer" target="_blank">Kommentare unterstützt von <span class="logo-disqus">Disqus</span>.</a>'
+          NOTICE: 'Bitte beachten Sie, dass Ihr Browser bei einem Klick auf "Kommentare Laden" eine direkte Verbindung mit Servern von Disqus herstellen wird.<br>Für weitere Informationen, besuchen Sie bitte unsere <a href="https://appserver.io/privacy" target="_blank" title="Datenschutzerklärung">Datenschutzerklärung</a>.'

@@ -1,0 +1,166 @@
+{% set theme_config = attribute(config.themes, config.system.pages.theme) %}
+<!DOCTYPE html>
+<html lang="{{ grav.language.getLanguage ?: 'en' }}">
+<head>
+    {% block head %}
+    <meta charset="utf-8" />
+    <title>{% if header.title %}{{ header.title }} | {% endif %}{{ site.title }}</title>
+    {% include 'partials/metadata.html.twig' %}
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" />
+    <link rel="alternate" type="application/atom+xml" href="{{ base_url_absolute}}/feed.atom" title="Atom Feed" />
+    <link rel="alternate" type="application/rss+xml" href="{{ base_url_absolute}}/feed.rss" title="RSS Feed" />
+    <link rel="icon" type="image/png" href="{{ url('theme://images/favicon.png') }}">
+
+    {% block stylesheets %}
+        {% do assets.addCss('theme://css-compiled/nucleus.css',102) %}
+        {% do assets.addCss('theme://css-compiled/theme.css',101) %}
+        {% do assets.addCss('theme://css/custom.css',100) %}
+        {% do assets.addCss('theme://css/font-awesome.min.css',100) %}
+        {% do assets.addCss('theme://css/featherlight.min.css') %}
+
+        {% if browser.getBrowser == 'msie' and browser.getVersion >= 8 and browser.getVersion <= 9 %}
+            {% do assets.addCss('theme://css/nucleus-ie9.css') %}
+            {% do assets.addCss('theme://css/pure-0.5.0/grids-min.css') %}
+            {% do assets.addJs('theme://js/html5shiv-printshiv.min.js') %}
+        {% endif %}
+
+        {{ assets.css() }}
+    {% endblock %}
+
+    {% block javascripts %}
+        {% do assets.addJs('jquery',101) %}
+        {% do assets.addJs('theme://js/modernizr.custom.71422.js',100) %}
+        {% do assets.addJs('theme://js/featherlight.min.js') %}
+        {% do assets.addJs('theme://js/clipboard.min.js') %}
+        {% do assets.addJs('theme://js/jquery.scrollbar.min.js') %}
+        {% do assets.addJs('theme://js/learn.js') %}
+        <!-- Google Tag Manager -->
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-WV49GFG');
+        </script>
+        <!-- End Google Tag Manager -->
+        {{ assets.js() }}
+    {% endblock %}
+
+    {% endblock %}
+</head>
+<body class="searchbox-hidden {{ page.header.body_classes }}" data-url="{{ page.route }}">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WV49GFG" 
+        height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <!-- Privacy Popup -->
+    <div class="cookie-notice js-cookie-notice js-change-by-scroll bg-shady">
+        <div class="cookie-notice--content">
+            <div class="cookie-notice-message">
+                <h4>HEY - ANOTHER MESSAGE. AND GUESS WHAT?</h4>
+
+                <p>You were right. This website uses cookies, and we are obliged to inform you about:</p>
+
+                <p>1. technically necessary cookies, e.g. that your browser remembers whether our menu is visible<br>
+                2. "evil" tracking cookies from Google Analytics (IPs anonymized, of course) partially combined with "Optimize A/B Testing", so that we can adapt our website to your needs</p>
+
+                <p>As long as you don't press "accept", we do not track you. Promise!<br>
+                <br>
+                <a href="https://appserver.io/privacy" title="Privacy Statement" target="_blank">Detailed information in our Privacy Statement</a></p>
+
+            </div>
+
+            <div class="cookie-notice--buttons">
+                <span class="cookie-notice--allowlink">
+                    <a class="td-btn js-allow-cookies--link allow-cookies--link" href="#">Accept</a>
+                </span>
+                <span class="cookie-notice--denylink">
+                    <a class="td-btn js-deny-cookies--link deny-cookies--link" href="#">Deny</a>
+                </span>
+            </div>
+        </div>
+        <div class="cookie-notice--spinner">&nbsp;</div>
+    </div>
+    <!-- End Privacy Popup -->
+    {% block sidebar %}
+    {% include 'partials/nav.html.twig' %}
+    {% endblock %}
+
+    {% block body %}
+    <section id="body">
+        <div id="overlay"></div>
+
+        <div class="padding highlightable">
+            <a href="#" id="sidebar-toggle" data-sidebar-toggle><i class="fa fa-2x fa-bars"></i></a>
+
+            {% block topbar %}{% if theme_config.github.position == 'top' or config.plugins.breadcrumbs.enabled %}
+            <div id="top-bar">
+                {% if theme_config.github.position == 'top' %}
+                <div id="top-github-link">
+                {% include 'partials/github_link.html.twig' %}
+                </div>
+                {% endif %}
+
+                {% if config.plugins.breadcrumbs.enabled %}
+                {% include 'partials/breadcrumbs.html.twig' %}
+                {% endif %}
+            </div>
+            {% endif %}{% endblock %}
+
+            {% block content %}{% endblock %}
+
+            {% block jscomments %}
+                {% if config.plugins.jscomments.enabled and not page.header.jscomments.disabled %}
+                  {{ jscomments('disqus', { shortname: 'appserver-io' })|raw }}
+                {% endif %}
+            {% endblock %}
+
+            {% block footer %}
+                {% if theme_config.github.position == 'bottom' %}
+                {% include 'partials/github_note.html.twig' %}
+                {% endif %}
+            {% endblock %}
+
+        </div>
+        {% block navigation %}{% endblock %}
+    </section>
+    {% endblock %}
+    {% block analytics %}
+        <!-- Privacy Popup -->
+        <script>
+            function getCookie(name) {
+              var match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+              if (match) return match[2];
+            };
+            function setCookie(cname, cvalue, exdays) {
+                var d = new Date();
+                d.setTime(d.getTime() + (exdays*24*60*60*1000));
+                var expires = "expires="+ d.toUTCString();
+                document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/;domain=."+getCookieDomain();
+            }
+            function deleteCookie(name) {
+                document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:01 GMT;path=/;domain=."+getCookieDomain();
+            }
+            function getCookieDomain() {
+                return window.location.hostname.replace('docs.', '');
+            }
+
+            if (!getCookie('td-opt-in') && !getCookie('td-opt-out') && location.pathname.substr(1) !== 'privacy') {
+                $('.cookie-notice').show(300);
+            }
+
+            $('.allow-cookies--link').on('click', function(e) {
+                setCookie('td-opt-in', true, 365);
+                $('.cookie-notice').hide(300);
+            });
+
+            $('.deny-cookies--link').on('click', function(e) {
+                setCookie('td-opt-out', true, 30);
+                $('.cookie-notice').hide(300);
+            });
+        </script>
+        <!-- End Privacy Popup -->
+    {% endblock %}
+ </body>
+</html>
