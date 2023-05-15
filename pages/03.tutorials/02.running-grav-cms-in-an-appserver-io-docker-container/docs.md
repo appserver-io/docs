@@ -36,7 +36,7 @@ MacBook-Pro:~ docker run -d \
   -p127.0.0.1:80:80 \
   -p127.0.0.1:443:443 \
   -v /Users/wagnert/Workspace:/root/Workspace \
-  --name appserver-1.1.4-magento \
+  --name appserver-1.1.4-grav \
   appserver/dist:1.1.4
 ```
 
